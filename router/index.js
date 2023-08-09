@@ -9,10 +9,9 @@ const cors = require('cors')
 const config = require('../config/config');
 
 router.post('/register', authController.register);
-router.options('/login', cors({
-   origin: config.origin,
-  credentials: true }))
-router.post('/login', cors(), authController.login);
+router.post('/login', cors({
+    origin: config.origin,
+   credentials: true }), authController.login);
 router.post('/logout', authController.logout);
 
 router.use('/users', users);
