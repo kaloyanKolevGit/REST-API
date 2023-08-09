@@ -13,7 +13,10 @@ module.exports = (app) => {
 
     app.use(express.static(path.resolve(__basedir, 'static')));
 
-    app.use(cors());
+    app.use(cors({
+        origin: config.origin,
+        credentials: true
+      }));
 
 
     // app.use(errorHandler(err, req, res, next));
