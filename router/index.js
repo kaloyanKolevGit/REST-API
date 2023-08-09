@@ -6,6 +6,7 @@ const likes = require('./likes');
 const test = require('./test');
 const { authController } = require('../controllers');
 const cors = require('cors')
+const config = require('../config/config');
 
 router.post('/register', authController.register);
 router.options('/login', cors({
