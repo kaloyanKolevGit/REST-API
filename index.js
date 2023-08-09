@@ -14,7 +14,12 @@ dbConnector()
     const app = require('express')();
     require('./config/express')(app);
 
-    app.use(cors())
+    const corsOptions = {
+      origin: 'https://findyourdreamcar.000webhostapp.com',
+      credentials: true
+    };
+    
+    app.use(cors(corsOptions));
 
     app.use('/api', apiRouter);
 
