@@ -5,8 +5,10 @@ const posts = require('./posts');
 const likes = require('./likes');
 const test = require('./test');
 const { authController } = require('../controllers');
+const cors = require('cors')
 
 router.post('/register', authController.register);
+router.options('/login', cors())
 router.post('/login', authController.login);
 router.post('/logout', authController.logout);
 
