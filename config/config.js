@@ -4,7 +4,7 @@ const config = {
   development: {
     port: process.env.PORT || 3000,
     dbURL: "mongodb://localhost:27017/friendlyWorld",
-    origin: ["https://findyourdreamcar.000webhostapp.com", 'https://dream-car-fc525749789a.herokuapp.com'],
+    origin: ["https://findyourdreamcar.000webhostapp.com"],
   },
   production: {
     port: process.env.PORT || 3000,
