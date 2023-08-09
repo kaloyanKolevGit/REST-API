@@ -27,7 +27,7 @@ function register(req, res, next) {
             } else {
                 res.cookie(authCookieName, token, { httpOnly: true })
             }
-            res.status(200).header("Access-Control-Allow-Origin", "*")
+            res.status(200)
                 .send(createdUser);
         })
         .catch(err => {
