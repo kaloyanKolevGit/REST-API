@@ -9,7 +9,7 @@ const cors = require('cors')
 
 router.post('/register', authController.register);
 router.options('/login', cors())
-router.post('/login', authController.login);
+router.post('/login', cors(), authController.login);
 router.post('/logout', authController.logout);
 
 router.use('/users', users);
