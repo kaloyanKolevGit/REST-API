@@ -17,7 +17,7 @@ module.exports = (app) => {
         origin: config.origin,
         credentials: true
       }));
-    
+
 
     // app.use(errorHandler(err, req, res, next));
 };
