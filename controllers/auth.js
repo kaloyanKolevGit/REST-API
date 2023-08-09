@@ -12,6 +12,7 @@ const removePassword = (data) => {
     return userData
 }
 
+
 function register(req, res, next) {
     const { tel, email, username, password, repeatPassword } = req.body;
 
@@ -26,7 +27,7 @@ function register(req, res, next) {
             } else {
                 res.cookie(authCookieName, token, { httpOnly: true })
             }
-            res.status(200)
+            res.status(200).header("Access-Control-Allow-Origin", "*")
                 .send(createdUser);
         })
         .catch(err => {
