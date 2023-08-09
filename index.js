@@ -5,6 +5,7 @@ const dbConnector = require('./config/db');
 const apiRouter = require('./router');
 // const config = require('./config/config');
 const { errorHandler } = require('./utils');
+const cors = require('cors')
 
 dbConnector()
   .then(() => {
@@ -12,6 +13,8 @@ dbConnector()
 
     const app = require('express')();
     require('./config/express')(app);
+
+    app.use(cors())
 
     app.use('/api', apiRouter);
 
